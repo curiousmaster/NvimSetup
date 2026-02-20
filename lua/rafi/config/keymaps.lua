@@ -17,6 +17,7 @@ local unmap = function(modes, lhs)
 end
 
 -- stylua: ignore start
+vim.keymap.set("n", "S", "cc", { noremap = true })
 
 -- Picker {{{
 

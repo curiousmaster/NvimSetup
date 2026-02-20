@@ -5,6 +5,13 @@
 -- This file is automatically loaded by lua/rafi/config/lazy.lua
 -- Extends $XDG_DATA_HOME/nvim/lazy/LazyVim/lua/lazyvim/config/options.lua
 
+-- Personal config
+vim.g.netrw_banner = 0
+vim.g.netrw_liststyle = 3
+vim.g.netrw_winsize = 25
+vim.g.netrw_browse_split = 4
+vim.g.netrw_altv = 1
+
 -- Keyboard leaders
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ';'
@@ -22,13 +29,14 @@ local opt = vim.opt
 
 opt.autowrite = false
 opt.expandtab = false
-opt.number = false
-opt.relativenumber = false
+opt.number = true
+opt.relativenumber = true
 
 opt.title = true
 opt.titlestring = '%<%F%=%l/%L - nvim'
 opt.textwidth = 80             -- Text width maximum chars before wrapping
-opt.mouse = 'nv'               -- Enable mouse in normal and visual modes only
+--opt.mouse = 'nv'               -- Enable mouse in normal and visual modes only
+opt.mouse = 'v'               -- Enable mouse in normal and visual modes only
 opt.spelloptions:append('camel')
 opt.diffopt:append({
 	'indent-heuristic',
@@ -52,7 +60,7 @@ opt.breakindent = true
 opt.showcmd = false       -- Don't show command in status line
 opt.numberwidth = 2       -- Minimum number of columns for the line number
 opt.cmdheight = 0
-opt.colorcolumn = '+0'    -- Align text at 'textwidth'
+opt.colorcolumn = '0'    -- Align text at 'textwidth'
 opt.showtabline = 2       -- Always show the tabs line
 opt.helpheight = 0        -- Disable help window resizing
 opt.winwidth = 30         -- Minimum width for active window
@@ -69,9 +77,9 @@ opt.listchars = {
 	trail = '·'
 }
 opt.fillchars = {
-	foldopen = '', --  󰅀
-	foldclose = '', --  󰅂
-	fold = ' ', -- ⸱
+	foldopen = '-', --  󰅀
+	foldclose = '+', --  󰅂
+	fold = '=', -- ⸱
 	foldsep = ' ',
 	diff = '╱',
 	eob = ' ',
@@ -134,5 +142,4 @@ vim.filetype.add({
 		['Jenkinsfile.*'] = 'groovy',
 	},
 })
-
 -- vim: set ts=2 sw=0 tw=80 noet :
